@@ -11,7 +11,7 @@ app.post('/trips/add', (req, res, next) => {
     // res.json(req.session.user);
     // return;
     const address = req.body.address
-    const apiKey = "AIzaSyAwP4jgYQS1sB9WLmdLV3Bhmfk2-lF3OR4" 
+    const apiKey = "**************" 
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${apiKey}`
     const latlng = fetch(url).then(res=>res.json()).then(res=>res.results[0].geometry.location).catch(err=>{ // fetching lat/long of address
     throw err;
